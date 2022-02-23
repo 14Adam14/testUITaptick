@@ -1,3 +1,4 @@
+// Tap heart
 
 import SwiftUI
 
@@ -9,10 +10,7 @@ struct ContentView: View {
  
 
     let generator = UINotificationFeedbackGenerator()
-    
-    
-    
-    
+
     @State var switchShadow: Bool = true
     
     
@@ -29,7 +27,7 @@ struct ContentView: View {
             
            
             
-            VStack {
+        //    VStack {
            
                 Button {
                     
@@ -57,13 +55,17 @@ struct ContentView: View {
                         )
                 }
  
-            }
+           // }
         }
     }
 }
 
 
 // архив с нужными цветами и примененное к нему свойство рандом   назначение цвета
+
+// добавить пружинную анимацию к сердцу   по нажатию  эмитация биения  сжимание разжимание
+
+// извлечь фунцкиональность из тела
 
 
 struct ContentView_Previews: PreviewProvider {
