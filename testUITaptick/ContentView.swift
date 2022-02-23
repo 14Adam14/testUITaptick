@@ -41,13 +41,15 @@ struct ContentView: View {
                 } label: {
                     Circle()
                         .fill(switchShadow ? Color.white : Color.black)
-                        .frame(width: 90, height: 90)
+                        .frame(width: 150, height: 150)
                     
                         .shadow(color: switchShadow ? .white : .black, radius: 10)
                     
                         .overlay(
                         Image(systemName: "heart.fill")
-                            .font(.largeTitle)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            //.padding(50)
                             .foregroundColor(Color(hue: 1.0, saturation: 0.888, brightness: 0.74))
                         
                             .shadow(color: Color(hue: 1.0, saturation: 0.888, brightness: 0.74), radius: 10)
