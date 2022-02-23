@@ -49,7 +49,7 @@ struct ContentView: View {
                         Image(systemName: "heart.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            //.padding(50)
+                            .padding(40)
                             .foregroundColor(Color(hue: 1.0, saturation: 0.888, brightness: 0.74))
                         
                             .shadow(color: Color(hue: 1.0, saturation: 0.888, brightness: 0.74), radius: 10)
