@@ -3,51 +3,65 @@ import SwiftUI
 
 
 
-
 struct ContentView: View {
     
     
-    
-    @State var isStartingState: Bool = false
+ 
 
     let generator = UINotificationFeedbackGenerator()
     
     
     
     
+    @State var switchShadow: Bool = true
+    
+    
     
     var body: some View {
         
-        VStack {
-            Button("button") {
+        
+
+        ZStack {
             
-                self.generator.notificationOccurred(.success)
-            }
-       
-            Text("start le")
-          
-            RoundedRectangle(cornerRadius: 25)
-                .fill(Color.blue)
-            // if isStartingState true to Color.red  inache  Color.blue
-            
-            
-                    .frame(
-                        
-                        width: 200,
-                        height: 400
-   
-                    )
+            Rectangle()
+                .ignoresSafeArea()
+                .foregroundColor(switchShadow ? .black : .yellow)  //
             
            
             
-            Spacer()
-            
+            VStack {
+           
+                Button {
+                    
+                    self.generator.notificationOccurred(.success)
+                    
+                    switchShadow.toggle()
+                                         
+                    
+                } label: {
+                    Circle()
+                        .fill(switchShadow ? Color.white : Color.black)
+                        .frame(width: 90, height: 90)
+                    
+                        .shadow(color: switchShadow ? .white : .black, radius: 10)
+                    
+                        .overlay(
+                        Image(systemName: "heart.fill")
+                            .font(.largeTitle)
+                            .foregroundColor(Color(hue: 1.0, saturation: 0.888, brightness: 0.74))
+                        
+                            .shadow(color: Color(hue: 1.0, saturation: 0.888, brightness: 0.74), radius: 10)
+                        
+                        )
+                }
+ 
+            }
         }
     }
 }
 
 
-
+// архив с нужными цветами и примененное к нему свойство рандом   назначение цвета
 
 
 struct ContentView_Previews: PreviewProvider {
