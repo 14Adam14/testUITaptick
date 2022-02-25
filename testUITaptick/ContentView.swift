@@ -60,16 +60,17 @@ struct ContentView: View {
                     .overlay(
                         Image(systemName: "heart.fill")
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .padding(40)
+                            .frame(width: isAnimated ? 65 : 45, height: isAnimated ? 55 : 35)
+                            //.aspectRatio(contentMode: .fit)
+                            //.padding(40)
                             .foregroundColor(Color(hue: 1.0, saturation: 0.888, brightness: 0.74))
                         
                             .shadow(color: Color(hue: 1.0, saturation: 0.888, brightness: 0.74), radius: 10)
-//                            .animation(.spring(
-//                                response: 0.5,
-//                                dampingFraction: 0.7,
-//                                blendDuration: 1),
-//                                       value: isAnimating)
+                            .animation(.spring(
+                                response: 0.5,
+                                dampingFraction: 0.7,
+                                blendDuration: 1),
+                                       value: isAnimated)
                         
                     )
             }
